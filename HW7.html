@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="HW7.css">
+    <title>Art Store</title>
+</head>
+<body>
+    <div class="modal" id="modal">
+        <div class="tier1">
+            <button id="expand"><i class="fa fa-expand" aria-hidden="true"></i></button>
+        </div>
+        <div class="tier2">
+            <img id="modalPic" />
+            <button id="next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+        </div>
+        <div class="tier3" id="tier3">
+            <div id="modalTitle"></div>
+            <div id="modalDesc"></div>
+        </div>
+        <div class="tier4">
+            <div id="close" onclick="modal.style.display='none'"><i class="fa fa-times" aria-hidden="true"></i></div>
+        </div>
+    </div>
+    
+
+    <div class="basket" id="basket">
+        <div class="basketWrapper" id="basketWrapper">
+            <div class="cart">
+                <button id="basketBtn">&#10095;</button>
+                <div>Cart</div>
+            </div>
+            <div id="productHolder">
+
+            </div>
+            <div class="amount">
+                <div class="subtotal">Subtotal <span>$<span id="subtotal"></span> </span></div>
+                <div class="cartPrice1" id="cartPrice"></div>
+            </div>
+            <div class="btnHolder">
+                <button id="cartBtn">Vew in Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo absolute">
+        <a href="file:///C:/Users/Narek/Desktop/WebEX/JS/HW7/HW7.html">
+            <span class="logoTxt">EX</span>
+        </a>
+    </div>
+
+    <div id="navBasketBtnBurger">
+        <span id="basketValBurger"></span>
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+    </div>
+
+    <input type="checkbox" id="toggle">
+            <label for="toggle" class="hamburger">
+                <div class="top"></div>
+                <div class="meat"></div>
+                <div class="bottom"></div>
+            </label>
+
+    <div id="navbarBurger">
+        <div id="logIn">
+            <div class="profile"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+            <span class="login">Log In</span>
+        </div>
+        <div id="navContainer">
+            <div class="navLink navClassBurger" >HOME</div>
+            <div class="navLink navClassBurger" >ABOUT</div>
+            <div class="navLink navClassBurger" >CREATURES</div>
+            <div class="navLink navClassBurger" >LANDSCAPE</div>
+            <div class="navLink navClassBurger" >SHOP</div>
+            <div class="navLink navClassBurger" >CONTACT</div>
+        </div>
+        <div class="socLogo">
+            <a href="#">
+                <i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#">
+                <i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#">
+                <i class="fa fa-flickr" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+    <div class="container">
+    <header>
+        <nav>
+            <div id="navbar">
+                <div class="logo">
+                    <a href="file:///C:/Users/Narek/Desktop/WebEX/JS/HW7/HW7.html">
+                        <span class="logoTxt">EX</span>
+                    </a>
+                </div>
+                <div id="navContainer">
+                    <div class="navLink navClass" >HOME</div>
+                    <div class="navLink navClass" >ABOUT</div>
+                    <div class="navLink navClass" >CREATURES</div>
+                    <div class="navLink navClass" >LANDSCAPE</div>
+                    <div class="navLink navClass" >SHOP</div>
+                    <div class="navLink navClass" >CONTACT</div>
+                </div>
+                <div class="socLogo">
+                    <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#">
+                        <i class="fa fa-flickr" aria-hidden="true"></i></a>
+                </div>
+                <div id="logIn">
+                    <div class="profile"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+                    <span class="login">Log In</span>
+                </div>
+                <div id="navBasketBtn">
+                    <span id="basketVal"></span>
+                    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="mainContainer" id="mainContainer">
+            <div class="homewrapper" id="homeWrapper" >
+                <div class="homeContent" id="homeContent">
+                    <p class="date">FEBRUARY 19th, 2035</p>
+                    <p class="homeTitle">INTO THE WILD</p>
+                    <P class="homedesc">SOLO EXHIBITION AT THE CRAFT GALLERY. LONDON, UK</P>
+                </div>
+                <div class="storeLink">
+                    <p class="linkDesc">VISIT THE ONLINE STORE</p>
+                    <button id="shopBtn">Shop Artwork</button>
+                </div>
+            </div>
+        
+            <div class="aboutWrapper" id="aboutWrapper" index='0' data-aos="fade-up">
+                <div id="title">Erika Kayne. Digital Collage</div>
+                <div id="description">
+                    <p class="aboutDesc">I'm a paragraph. Click here to add your own text and edit me. It’s easy. 
+                        Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. 
+                        Feel free to drag and drop me anywhere you like on your page. 
+                        I’m a great place for you to tell a story and let your users know a little more about you.
+                    </p>
+                    <p class="aboutDesc">
+                        This is a great space to write long text about your company and your services. 
+                        You can use this space to go into a little more detail about your company. 
+                        Talk about your team and what services you provide. 
+                        Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. 
+                        Make your company stand out and show your visitors who you are.
+                    </p>
+                </div>
+                <div id="picBoxA"></div>
+            </div>
+
+            <div class="creaturesWrapper" id="creaturesWrapper" index='0'>
+                <div id="title">Creatures</div>
+                <div id="description">
+                    <p>I'm a paragraph. Click here to add your own text and edit me. 
+                        It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. 
+                        Feel free to drag and drop me anywhere you like on your page. 
+                        I’m a great place for you to tell a story and let your users know a little more about you.
+                    </p>    
+                </div>
+                <div id="picBoxC"></div>
+            </div>
+            
+            <div class="landscapeWrapper" id="landscapeWrapper" index='0'>
+                <div id="title">Emotional Landscapes</div>
+                <div id="description">
+                    <p>I'm a paragraph. Click here to add your own text and edit me. 
+                        It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. 
+                        Feel free to drag and drop me anywhere you like on your page. 
+                        I’m a great place for you to tell a story and let your users know a little more about you.
+                    </p>    
+                </div>
+                <div id="picBoxL"></div>
+            </div>
+
+            <div class="shopWrapper" id="shopWrapper">
+                
+            </div>
+            <div class="buyWrapper" id="buyWrapper" index='0'>
+                <div class="slot1">
+                        <div class="buyNavs1">
+                            <span id="buyHome">Home/</span>
+                            <span id="buyDicision"></span>
+                        </div>
+                        <div class="buyNavs2">
+                            <span><i class="fa fa-angle-left" aria-hidden="true"></i></span>
+                            <button id="buyPrev">Prev</button>
+                            <span>|</span>
+                            <button id="buyNext">Next</button>
+                            <span><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                        </div>
+                </div>
+                <div class="slot2">
+                    <div class="buyPic">
+                        <img id="buyPicL" />
+                        <img id="buyPicS" />
+                        <img id="buyPicXS" />
+                        <div id="buyDesc"></div>
+                    </div>
+                </div>
+                <div class="slot3">
+                    <div id="buyTitle"></div>
+                    <div id="skuCode"></div>
+                    <div class="buyPrice"><span>$</span><span id="buyPrice"></span></div>
+                    <label for="quantity">Quantity</label>
+                    <input type="number" name="quantity" id="buyInp" value="1"/>
+                    <button id="addCart" >Add to Cart</button>
+                    <input type="submit" value="Buy Now" id="buyNow" />
+                </div>
+                <div class="slot4">
+                    <div class="productInfo">
+                        <button id="infoBtn">PRODUCT INFO</button>
+                        <div id="info1" class="info1">
+                            <p>
+                                I'm a product detail. I'm a great place to add more information about your product such as sizing,
+                                material, care and cleaning instructions. This is also a great space to write what makes this product special and how your
+                                customers can benefit from this item. Buyers like to know what they’re getting before they purchase, 
+                                so give them as much information as possible so they can buy with confidence and certainty.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="productReturn">
+                        <button id="returnBtn">RETURN AND REFUND POLICY</button>
+                        <div id="info2" class="info2">
+                            <p>
+                                I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase.
+                                Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.
+                            </p>
+                        </div>
+                        <div class="buySoc">
+                            <div class="faWhatsapp">
+                                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="faFacebook">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="faTwitter">
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            </div>
+                            <div class="faPinterest">
+                                <a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="cardWrapper" class="cardWrapper">
+                <div class="productView" id="productView">
+                    <div class="myCard">My Card</div>
+                    <div id="emptyBox">
+                        <div class="emptyContent">Cart is empty
+                            <button id="continueShop">Continue Shopping</button>
+                        </div>
+                    </div>
+                    <div id="productVeiwHolder"></div>
+                    <div class="noteBox" id="noteBox">
+                        <div class="promoCode">
+                            <button id="promoCode"><i class="fa fa-tag" aria-hidden="true"></i> Enter a promo code</button>
+                            <div id="codeHolder" class="codeClass">
+                                <input type="text" id="codeInput"/>
+                                <button type="submit" id="codeSubmit">Apply</button>
+                            </div>
+                        </div>
+                        <div class="addNote">
+                            <button id="addNote"><i class="fa fa-file-text-o" aria-hidden="true"></i> Add a note</button>
+                            <div id="noteHolder" class="noteClass">
+                                <textarea id="noteArea" placeholder="Instructions? Special requests? Add them here."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productAmount" id="productAmount">
+                    <div class="orderSummary">Order Summary</div>
+                    <div class="cardSubtotalHolder">
+                        <div class="cardAmountHolder">
+                            <div class="cardSubtotal">Subtotal <span>$<span id="cardSubtotal"></span> </span></div>
+                            <div class="estimate"><span>Estimate delivery</span></div>
+                        </div>
+                        <div class="totalHolder">
+                            <div class="cardTotal">Total <span>$<span id="cardTotal"></span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactWrapper" id="contactWrapper">
+                <div class="backGR"></div>
+                <div class="contactInfo">
+                    <div class="contactBox">
+                        <div class="name">Erika Kayne</div class="name">
+                        <div>
+                            <p>500 Terry Francois St.</p>
+                            <p>San Francisco</p>
+                            <p>CA 94158</p>
+                        </div>
+                        <div>
+                            <p>info@my-domain.com</p>
+                            <p>Tel: 123-456-7890</p>
+                            <p>Fax: 123-456-7890</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="formGreeting">Say Hello :)</div>
+                    <form>
+                        <input type="text" placeholder="Name" />
+                        <input type="email" placeholder="Email" />
+                        <input type="text" placeholder="Subject" />
+                        <textarea placeholder="Message"></textarea>
+                        <button>Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="shippingWrapper" id="shippingWrapper">
+                <div id="title">Shipping & Returns</div>
+                <div class="shipContent">
+                    <div class="policy">
+                        <div id="shipTitle">Shipping Policy</div>
+                        <p>
+                            I’m a Shipping Policy section. I’m a great place to update your customers about your shipping methods, packaging and costs. 
+                            Use plain, straightforward language to build trust and make sure that your customers stay loyal!
+                        </p>
+                        <p>
+                            I'm the second paragraph in your Shipping Policy section. Click here to add your own text and edit me. It’s easy.
+                            Just click “Edit Text” or double click me to add details about your policy and make changes to the font. 
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                    <div class="return">
+                        <div id="shipTitle">Return & Exchange Policy</div>
+                        <p>
+                            I’m a return policy section. 
+                            I’m a great place to let your customers know what to do in case they’ve changed their mind about their purchase, 
+                            or if they’re dissatisfied with a product. 
+                            Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that
+                            they can buy with confidence.
+                        </p>
+                        <p>
+                            I'm the second paragraph in your Return & Exchange policy. Click here to add your own text and edit me.
+                            It’s easy. Just click “Edit Text” or double click me to add details about your policy and make changes to the font.
+                            I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="termsWrapper" id="termsWrapper">
+                <div id="title">Terms & Conditions</div>
+                <div class="termsContent">
+                    <div class="policy">
+                        <div id="shipTitle">Customer Care</div>
+                        <p>
+                            I’m a Customer Care section. I’m a great place to write a long text about your company and your services,
+                             and, most importantly, how to contact your store with queries. 
+                             Writing a detailed Customer Care policy is a great way to build trust and reassure your customers 
+                             that they can buy with confidence.
+                        </p>
+                        <p>
+                            I'm the second paragraph in your Customer Care section. Click here to add your own text and edit me. 
+                            It’s easy. Just click “Edit Text” or double click me to add details about your policy and make changes to the font.
+                             I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                    <div class="return">
+                        <div id="shipTitle">Wholesale Inquiries</div>
+                        <p>
+                            I’m a wholesale inquiries section. I’m a great place to inform other retailers about how they can sell your stunning products.
+                             Use plain language and give as much information as possible in order to promote your business and take it to the next level!
+                        </p>
+                        <p>
+                            I'm the second paragraph in your Wholesale Inquiries section. Click here to add your own text and edit me. It’s easy. 
+                            Just click “Edit Text” or double click me to add details about your policy and make changes to the font.
+                             I’m a great place for you to tell a story and let your users know a little more about you.
+                        </p>
+                    </div>
+                    <div class="policy">
+                        <div id="shipTitle">Privacy & Safety</div>
+                        <p>
+                            I’m a Privacy & Safety policy section. I’m a great place to inform your customers about how you use,
+                             store, and protect their personal information.
+                              Add details such as how you use third-party banking to verify payment,
+                               the way you collect data or when will you contact users after their purchase was completed successfully.
+                        </p>
+                        <p>
+                            Your user’s privacy is of the highest importance to your business, 
+                            so take the time to write an accurate and detailed policy. 
+                            Use straightforward language to gain their trust and make sure they keep coming back to your site!
+                        </p>
+                    </div>
+                    <div class="policy">
+                        <div id="shipTitle">Payment Methods</div>
+                            <p> Credit / Debit Cards</p>
+                            <p> PAYPAL</p>
+                            <p> Offline Payments</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faqWrapper" id="faqWrapper">
+                <div class="faqTitle">Frequently asked questions</div>
+                <div class="faqBtns" id="faqBtns"></div>
+                <div id="settingWrapper">
+                    <div id="questionBox1">
+                        <button id="questionBtn1">How do I add a new question &amp; answer?</button>
+                        <i id="arrow" class="fa fa-angle-down"></i>
+                        <div id="questionContent1" class="questionContent1">
+                            <div class="quote">To add a new FAQ follow these steps</div>
+                            
+                            <p>1. Click “Manage FAQs” button</p>
+                            <p>2. From your site’s dashboard you can add, edit and manage all your questions and answers</p>
+                            <p>3. Each question and answer should be added to a category</p>
+                            <p>4. Save and publish.</p>
+                            
+                            <div class="questionLinks">
+                                <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                <a href="#"><i id="fa" class="fa fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="questionBox2">
+                        <button id="questionBtn2">Can I insert an image, video, or gif in my FAQ?</button>
+                        <i class="fa fa-angle-down"></i>
+                        <div id="questionContent2" class="questionContent2">
+                            <div class="quote">Yes. To add media follow these steps</div>
+                            
+                            <p>1. Enter the app’s Settings</p>
+                            <p>2. Click on the “Manage FAQs” button</p>
+                            <p>3. Select the question you would like to add media to</p>
+                            <p>4. When editing your answer click on the camera, video, or GIF icon</p>
+                            <p>5. Add media from your library</p>
+                            
+                            <div class="questionLinks">
+                                <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                <a href="#"><i id="fa" class="fa fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="questionBox3">
+                        <button id="questionBtn3">How do I edit or remove the “FAQ” title?</button>
+                        <i class="fa fa-angle-down"></i>
+                        <div id="questionContent3" class="questionContent3">
+                            <div class="quote"></div>
+                            
+                            <p>You can edit the title from the Settings tab in the app.</p>
+                            <p>If you don’t want to display the title, simply disable the Title under “Info to Display”</p>
+                            
+                            <div class="questionLinks">
+                                <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                <a href="#"><i id="fa" class="fa fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="generalWrapper">
+                    <div id="questionBox4">
+                        <button id="questionBtn4">What is an FAQ section?</button>
+                        <i class="fa fa-angle-down"></i>
+                        <div id="questionContent4" class="questionContent4">
+                            
+                            <p>An FAQ section can be used to quickly answer common questions about you or your business, 
+                                such as “Where do you ship to?”, “What are your opening hours?” or “How can I book a service?”</p>
+                            <p>It’s a great way to help people navigate your site and can even boost your site’s SEO.</p>
+                            
+                            <img src="https://static.wixstatic.com/media/452dfd_cebd1429c8454ae9a61bf85247a07391~mv2.jpeg/v1/fill/w_350,h_199,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/452dfd_cebd1429c8454ae9a61bf85247a07391~mv2.jpeg" />
+
+                            <div class="questionLinks">
+                                <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                <a href="#"><i id="fa" class="fa fa-link" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footerLogo">
+                <div class="logo">
+                    <a href="file:///C:/Users/Narek/Desktop/WebEX/04.%20JS/HW7/HW7.html">
+                        <span class="logoTxt">EX</span>
+                    </a>
+                </div>
+            </div>
+            <div class="fax">© 2035 by EK. Powered and secured by Wix</div>
+            <div class="footerLinks">
+                <div class="footLink navClass">Shipping & Returns</div>
+                <div class="footLink navClass">Terms & Conditions</div>
+                <div class="footLink navClass">FAQ</div>
+            </div>
+            <div class="footerLinksBurger">
+                <div class="footLink navClassBurger">Shipping & Returns</div>
+                <div class="footLink navClassBurger">Terms & Conditions</div>
+                <div class="footLink navClassBurger">FAQ</div>
+            </div>
+            <div class="footerSoc">
+                <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="#">
+                    <i class="fa fa-flickr" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+    </div>
+<script src="HW7.js"></script>
+</body>
+</html>
